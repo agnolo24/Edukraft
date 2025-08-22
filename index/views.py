@@ -12,3 +12,7 @@ def aboutUs(request):
 
 def contactUs(request):
     return render(request, 'index/contactUs.html')
+
+
+def services(request):
+    return render(request, 'index/services.html')
