@@ -42,7 +42,6 @@
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
       <a href="{% url 'index' %}" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="{% static 'assets/img/logo.png' %}" alt="">
@@ -64,87 +63,80 @@
     </div>
   </header>
 
+  <main class="main">
+    <!-- Enquiry Form Section -->
+    <section id="enquiry" class="enquiry section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Enquiry Form</h2>
+          <p>Please fill out the form below and we'll get back to you as soon as possible.</p>
+        </div>
 
-
-
-
-<!-- Services Section -->
-<section id="services" class="services section">
-
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Services</h2>
-      <p>Explore Our Academic & Editorial Support</p>
-    </div><!-- End Section Title -->
-  
-    <div class="container">
-  
-      <div class="row gy-4">
-  
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-item item-cyan position-relative">
-            <i class="bi bi-activity icon"></i>
-            <h3>Thesis & Dissertation Guidance</h3>
-            <p>Comprehensive support for structuring, writing, and refining your academic research documents—tailored to university standards.</p>
-            <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+        <div class="row align-items-center">
+          <!-- Image Column -->
+          <div class="col-lg-6 d-none d-lg-block">
+            <div class="enquiry-image text-center">
+              <img src="{% static 'assets/img/enquiry.png' %}" alt="Enquiry" class="img-fluid" style="max-width: 100%; height: auto;">
+            </div>
+          </div>
+          
+          <!-- Form Column -->
+          <div class="col-lg-6">
+            <form action="#" method="post" class="enquiry-form">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <label for="email">Email *</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6 form-group">
+                  <label for="phone">Phone *</label>
+                  <input type="tel" class="form-control" name="phone" id="phone" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <label for="location">Location *</label>
+                  <input type="text" class="form-control" name="location" id="location" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <label for="university">University/Institution</label>
+                <input type="text" class="form-control" name="university" id="university">
+              </div>
+              <div class="form-group mt-3">
+                <label for="course">Course</label>
+                <input type="text" class="form-control" name="course" id="course">
+              </div>
+              <div class="form-group mt-3">
+                <label for="intake">Select Service</label>
+                <select class="form-select" name="intake" id="intake">
+                  <option value="">Select Service</option>
+                  <option value="Spring 2024">Thesis & Dissertation Guidance</option>
+                  <option value="Fall 2024">Research Proposal Writing</option>
+                  <option value="Spring 2025">Journal Formatting & Submission</option>
+                  <option value="Fall 2025">Plagiarism Correction</option>
+                  <option value="Fall 2025">One-on-One Consultation</option>
+                  <option value="Fall 2025">Academic Editing & Proofreading</option>
+                </select>
+              </div>
+              <div class="form-group mt-3">
+                <label for="message">Message</label>
+                <textarea class="form-control" name="message" rows="5" id="message"></textarea>
+              </div>
+              <div class="form-group mt-4 text-center">
+                <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+              </div>
+            </form>
           </div>
         </div>
-  
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-item item-orange position-relative">
-            <i class="bi bi-broadcast icon"></i>
-            <h3>Research Proposal Writing</h3>
-            <p>We help you craft compelling proposals with clear objectives, literature review, and methodology—ready for approval and funding.</p>
-            <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-  
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-item item-teal position-relative">
-            <i class="bi bi-easel icon"></i>
-            <h3>Journal Formatting & Submission</h3>
-            <p>We format manuscripts to meet Scopus, SCI, and IEEE standards, and assist with submission and revision workflows.</p>
-            <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-  
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-item item-red position-relative">
-            <i class="bi bi-bounding-box-circles icon"></i>
-            <h3>Plagiarism Correction</h3>
-            <p>Using advanced tools, we detect and eliminate plagiarism while preserving academic integrity and originality.</p>
-            <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-  
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-          <div class="service-item item-indigo position-relative">
-            <i class="bi bi-calendar4-week icon"></i>
-            <h3>One-on-One Consultation</h3>
-            <p>Personalized sessions with research experts to clarify your methodology, improve writing, and prepare for defense.</p>
-            <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-  
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-          <div class="service-item item-pink position-relative">
-            <i class="bi bi-chat-square-text icon"></i>
-            <h3>Academic Editing & Proofreading</h3>
-            <p>We polish your documents for grammar, clarity, and tone—ensuring they meet scholarly and professional standards.</p>
-            <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-  
       </div>
-  
-    </div>
-  
-  </section><!-- /Services Section -->
-  
-
-
-
-
+    </section>
+  </main>
 
   <footer id="footer" class="footer">
 
@@ -154,7 +146,7 @@
           <div class="col-lg-6">
             <h4>Join Our Newsletter</h4>
             <p>Subscribe to receive expert research tips, publication updates, and exclusive offers directly to your inbox.</p>
-            <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <form method="post" class="php-email-form">
               <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
               <div class="loading">Loading</div>
               <div class="error-message"></div>

@@ -16,3 +16,7 @@ def contactUs(request):
 
 def services(request):
     return render(request, 'index/services.html')
+
+
+def enquiry(request):
+    return render(request, 'index/enquiry.html')
