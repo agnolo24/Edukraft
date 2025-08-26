@@ -20,3 +20,4 @@ def services(request):
 
 def enquiry(request):
     return render(request, 'index/enquiry.html')
+
